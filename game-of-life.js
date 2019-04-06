@@ -297,7 +297,7 @@
       this.helpers.registerEvent(document.getElementById('buttonRun'), 'click', this.handlers.buttons.run, false);
       this.helpers.registerEvent(document.getElementById('buttonStep'), 'click', this.handlers.buttons.step, false);
       this.helpers.registerEvent(document.getElementById('buttonClear'), 'click', this.handlers.buttons.clear, false);
-      this.helpers.registerEvent(document.getElementById('buttonExport'), 'click', this.handlers.buttons.export_, false);
+    
 
       // Layout
       this.helpers.registerEvent(document.getElementById('buttonTrail'), 'click', this.handlers.buttons.trail, false);
@@ -538,7 +538,7 @@
 
         /**
          * Button Handler - Export State
-         */
+         
         export_ : function() {
           var i, j, url = '', cellState = '', params = '';
 
@@ -568,7 +568,7 @@
             document.getElementById('exportUrl').style.display = 'inline';
           }
         }
-
+*/
       }
 
     },
