@@ -119,7 +119,7 @@
 
 /*User Color Preference Code*/
     let bgColor = document.getElementById("bgColor");
-	let background = document.getElementById("wrapper");
+	let background = document.getElementById("body");
 	let bgOutput = document.getElementById("output");
 
 	background.style.background-color = bgColor.value;
