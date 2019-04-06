@@ -127,17 +127,20 @@
       schemes : [
       {
         dead : '#FFFFFF',
-        alive : ['#9898FF']
+        trail: '#FFFFFF',
+        alive :'#9898FF'
       },
 
       {
         dead : '#FFFFFF',
-        alive : ['#FF0000']
+        trail : '#FFFFFF',
+        alive :'#FF0000'
       },
 
       {
         dead : '#FFFFFF',
-        alive : ['#000000']
+        trail : '#FFFFFF',
+        alive :'#000000'
       }
 
       ]
@@ -170,7 +173,6 @@
       var colors, grid, zoom;
 
       this.autoplay = this.helpers.getUrlParameter('autoplay') === '1' ? true : this.autoplay;
-      this.trail.current = this.helpers.getUrlParameter('trail') === '1' ? true : this.trail.current;
 
       // Initial color config
       colors = parseInt(this.helpers.getUrlParameter('colors'), 10);
@@ -493,20 +495,6 @@
 
 
         /**
-         * Button Handler - Remove/Add Trail
-         */
-        trail : function() {
-          GOL.element.messages.layout.innerHTML = GOL.trail.current ? 'Trail is Off' : 'Trail is On';
-          GOL.trail.current = !GOL.trail.current;
-          if (GOL.running) {
-            GOL.trail.schedule = true;
-          } else {
-            GOL.canvas.drawWorld();
-          }
-        },
-
-
-        /**
          *
          */
         colors : function() {
@@ -555,7 +543,6 @@
             url = (window.location.href.indexOf('?') === -1) ? window.location.href : window.location.href.slice(0, window.location.href.indexOf('?'));
 
             params = '?autoplay=0' +
-            '&trail=' + (GOL.trail.current ? '1' : '0') +
             '&grid=' + (GOL.grid.current + 1) +
             '&colors=' + (GOL.colors.current + 1) +
             '&zoom=' + (GOL.zoom.current + 1) +
