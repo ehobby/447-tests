@@ -487,21 +487,6 @@
           }
         },
 
-
-        /**
-         * Button Handler - Remove/Add Trail
-         */
-        trail : function() {
-          GOL.element.messages.layout.innerHTML = GOL.trail.current ? 'Trail is Off' : 'Trail is On';
-          GOL.trail.current = !GOL.trail.current;
-          if (GOL.running) {
-            GOL.trail.schedule = true;
-          } else {
-            GOL.canvas.drawWorld();
-          }
-        },
-
-
         /**
          *
          */
@@ -510,20 +495,6 @@
           GOL.element.messages.layout.innerHTML = 'Color Scheme #' + (GOL.colors.current + 1);
           if (GOL.running) {
             GOL.colors.schedule = true; // Delay redraw
-          } else {
-            GOL.canvas.drawWorld(); // Force complete redraw
-          }
-        },
-
-
-        /**
-         *
-         */
-        grid : function() {
-          GOL.grid.current = (GOL.grid.current + 1) % GOL.grid.schemes.length;
-          GOL.element.messages.layout.innerHTML = 'Grid Scheme #' + (GOL.grid.current + 1);
-          if (GOL.running) {
-            GOL.grid.schedule = true; // Delay redraw
           } else {
             GOL.canvas.drawWorld(); // Force complete redraw
           }
