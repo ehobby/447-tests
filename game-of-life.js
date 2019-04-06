@@ -117,7 +117,7 @@
       ]
     },
 
-/*User Color Preference Code*/
+/*User Color Preference Code
     let bgColor = document.getElementById("bgColor");
 	let background = document.getElementById("body");
 	let bgOutput = document.getElementById("output");
@@ -130,7 +130,7 @@
 
 	bgColor.addEventListener("change", function(event) {
   	bgOutput.innerText = "Color set to " + bgColor.value + ".";
-	}, false);
+	}, false);*/
 
     // Cell colors
     colors : {
