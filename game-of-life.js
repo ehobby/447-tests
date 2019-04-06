@@ -62,8 +62,7 @@
 
     // Trail state
     trail : {
-      current: true,
-      schedule : false
+      current: false,
     },
 
 
