@@ -128,19 +128,19 @@
       {
         dead : '#FFFFFF',
         trail: '#FFFFFF',
-        alive :'#9898FF'
+        alive :['#9898FF']
       },
 
       {
         dead : '#FFFFFF',
         trail : '#FFFFFF',
-        alive :'#FF0000'
+        alive :['#FF0000']
       },
 
       {
         dead : '#FFFFFF',
         trail : '#FFFFFF',
-        alive :'#000000'
+        alive :['#000000']
       }
 
       ]
