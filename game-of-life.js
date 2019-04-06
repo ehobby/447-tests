@@ -122,10 +122,10 @@
 	let background = document.getElementById("body");
 	let bgOutput = document.getElementById("output");
 
-	background.style.background-color = bgColor.value;
+	background.style.backgroundColor = bgColor.value;
 
 	bgColor.addEventListener("input", function(event) {
-  	background.style.background-color = event.target.value;
+  	background.style.backgroundColor = event.target.value;
 	}, false);
 
 	bgColor.addEventListener("change", function(event) {
