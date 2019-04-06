@@ -62,7 +62,7 @@
 
     // Trail state
     trail : {
-      current: false,
+      current: true,
       schedule : false
     },
 
@@ -127,20 +127,20 @@
       schemes : [
       {
         dead : '#FFFFFF',
-        trail: '#FFFFFF',
-        alive :['#9898FF']
+        trail : ['#B5ECA2'],
+        alive : ['#9898FF', '#8585FF', '#7272FF', '#5F5FFF', '#4C4CFF', '#3939FF', '#2626FF', '#1313FF', '#0000FF', '#1313FF', '#2626FF', '#3939FF', '#4C4CFF', '#5F5FFF', '#7272FF', '#8585FF']
       },
 
       {
         dead : '#FFFFFF',
-        trail : '#FFFFFF',
-        alive :['#FF0000']
+        trail : ['#EE82EE', '#FF0000', '#FF7F00', '#FFFF00', '#008000 ', '#0000FF', '#4B0082'],
+        alive : ['#FF0000', '#FF7F00', '#FFFF00', '#008000 ', '#0000FF', '#4B0082', '#EE82EE']
       },
 
       {
         dead : '#FFFFFF',
-        trail : '#FFFFFF',
-        alive :['#000000']
+        trail : ['#9898FF', '#8585FF', '#7272FF', '#5F5FFF', '#4C4CFF', '#3939FF', '#2626FF', '#1313FF', '#0000FF', '#1313FF', '#2626FF', '#3939FF', '#4C4CFF', '#5F5FFF', '#7272FF', '#8585FF'],
+        alive : ['#000000']
       }
 
       ]
@@ -173,6 +173,7 @@
       var colors, grid, zoom;
 
       this.autoplay = this.helpers.getUrlParameter('autoplay') === '1' ? true : this.autoplay;
+      this.trail.current = this.helpers.getUrlParameter('trail') === '1' ? true : this.trail.current;
 
       // Initial color config
       colors = parseInt(this.helpers.getUrlParameter('colors'), 10);
@@ -300,7 +301,7 @@
       this.helpers.registerEvent(document.getElementById('buttonExport'), 'click', this.handlers.buttons.export_, false);
 
       // Layout
-     /* this.helpers.registerEvent(document.getElementById('buttonTrail'), 'click', this.handlers.buttons.trail, false);*/
+      this.helpers.registerEvent(document.getElementById('buttonTrail'), 'click', this.handlers.buttons.trail, false);
       this.helpers.registerEvent(document.getElementById('buttonGrid'), 'click', this.handlers.buttons.grid, false);
       this.helpers.registerEvent(document.getElementById('buttonColors'), 'click', this.handlers.buttons.colors, false);
     },
@@ -495,6 +496,20 @@
 
 
         /**
+         * Button Handler - Remove/Add Trail
+         */
+        trail : function() {
+          GOL.element.messages.layout.innerHTML = GOL.trail.current ? 'Trail is Off' : 'Trail is On';
+          GOL.trail.current = !GOL.trail.current;
+          if (GOL.running) {
+            GOL.trail.schedule = true;
+          } else {
+            GOL.canvas.drawWorld();
+          }
+        },
+
+
+        /**
          *
          */
         colors : function() {
@@ -543,6 +558,7 @@
             url = (window.location.href.indexOf('?') === -1) ? window.location.href : window.location.href.slice(0, window.location.href.indexOf('?'));
 
             params = '?autoplay=0' +
+            '&trail=' + (GOL.trail.current ? '1' : '0') +
             '&grid=' + (GOL.grid.current + 1) +
             '&colors=' + (GOL.colors.current + 1) +
             '&zoom=' + (GOL.zoom.current + 1) +
