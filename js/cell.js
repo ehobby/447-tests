@@ -124,13 +124,13 @@ function cellUniverse() {
         var context = canvasGrid.getContext("2d");
         for (var x = 0; x <= bw; x += CELL_DIMENSION) {
             context.moveTo(0.5 + x + p, p);
-            context.lineTo(0.5 + x + p, bh - p);
+            context.lineTo(0.5 + x + p, bh);
         }
 
 
         for (var x = 0; x <= bh; x += CELL_DIMENSION) {
             context.moveTo(p, 0.5 + x + p);
-            context.lineTo(bw - p, 0.5 + x + p);
+            context.lineTo(bw, 0.5 + x + p);
             }
 
         context.strokeStyle = "black";
