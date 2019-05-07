@@ -439,7 +439,7 @@ function updateCellAppearance(y, x, status) {
     var canvasGrid = document.getElementById(CELL_GRID_ID);
     const context = canvasGrid.getContext('2d');
     context.fillStyle = COLORS[status];
-    context.fillRect((y * CELL_DIMENSION), (x * CELL_DIMENSION), CELL_DIMENSION, CELL_DIMENSION);
+    context.fillRect((x * CELL_DIMENSION + 1 + HEIGHT_PAD), (y * CELL_DIMENSION + 1 + WIDTH_PAD), CELL_DIMENSION - 2, CELL_DIMENSION - 2);
 }
 
 function parseCellID(id) {
