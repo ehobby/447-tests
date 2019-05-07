@@ -114,8 +114,8 @@ function cellUniverse() {
         var numRows = this.bottomBound;
         var numCols = this.rightBound;
         for (var x = 0; x <= numCols; x += CELL_DIMENSION) {
-            context.moveTo(0.5 + x + p, p);
-            context.lineTo(0.5 + x + p, numRows + p);
+            context.moveTo(0.5 + x + PADDING, PADDING);
+            context.lineTo(0.5 + x + PADDING, numRows + PADDING);
         }
 
         for (var x = 0; x <= numRows; x += CELL_DIMENSION) {
