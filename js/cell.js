@@ -121,7 +121,7 @@ function cellUniverse() {
 
         for (var x = 0; x <= height / 4; x += CELL_DIMENSION) {
             context.moveTo(PADDING, x + PADDING);
-            context.lineTo((width / 4) - PADDING, 0.5 + x + PADDING);
+            context.lineTo((width / 4) + PADDING, x - PADDING);
         }
         context.strokeStyle = "black";
         context.stroke();
