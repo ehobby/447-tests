@@ -26,7 +26,9 @@ var numFixedDead = 0;
 function update(picker){
     var newColor = picker.toRGBString();
     console.log(newColor);
-    switch(picker.id){
+    var curId = picker.id;
+    console.log(curId);
+    switch(curId){
         case 'aliveColor':
             COLORS[1] = newColor;
             break;
