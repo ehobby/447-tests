@@ -23,28 +23,29 @@ var numFixedDead = 0;
 
 
 //Emily's color updating function
-function update(picker){
+function updateDead(picker){
     var newColor = picker.toRGBString();
     console.log(newColor);
-    var curId = this.id;
-    console.log(curId);
-    switch(curId){
-        case 'aliveColor':
-            COLORS[1] = newColor;
-            break;
-        case 'deadColor':
-            COLORS[0] = newColor;
-            break;
-        case 'fAliveColor':
-            COLORS[3] = newColor;
-            break;
-        case 'fDeadColor':
-            COLORS[2] = newColor;
-            break;
-    }
-
+    COLORS[0] = newColor;
 }
 
+function updateAlive(picker){
+    var newColor = picker.toRGBString();
+    console.log(newColor);
+    COLORS[1] = newColor;
+}
+
+function updateFDead(picker){
+    var newColor = picker.toRGBString();
+    console.log(newColor);
+    COLORS[2] = newColor;
+}
+
+function updateFAlive(picker){
+    var newColor = picker.toRGBString();
+    console.log(newColor);
+    COLORS[3] = newColor;
+}
 
 function cellUniverse() {
     this.leftBound = 0;
