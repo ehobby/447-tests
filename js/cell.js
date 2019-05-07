@@ -114,12 +114,12 @@ function cellUniverse() {
         var width = canvasGrid.offsetWidth;
         console.log(height);
         console.log(width);
-        for (var x = 0; x <= width - PADDING; x += CELL_DIMENSION) {
+        for (var x = 0; x <= width - (PADDING*4); x += CELL_DIMENSION) {
             context.moveTo(0.5 + x + PADDING, PADDING);
             context.lineTo(0.5 + x + PADDING, height + PADDING);
         }
 
-        for (var x = 0; x <= height - PADDING; x += CELL_DIMENSION) {
+        for (var x = 0; x <= height - (PADDING*4); x += CELL_DIMENSION) {
             context.moveTo(PADDING, 0.5 + x + PADDING);
             context.lineTo(width + PADDING, 0.5 + x + PADDING);
         }
