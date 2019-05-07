@@ -437,7 +437,9 @@ function generateSelectedCells() {
 
 function updateCellAppearance(y, x, status) {
     var canvasGrid = document.getElementById(CELL_GRID_ID);
-    canvasGrid.rows[y].cells[x].style.backgroundColor = COLORS[status];
+    const context = canvas.getContext('2d');
+    context.fillStyle = COLORS[status];
+    context.fillRect(y, x, CELL_DIMENSION / 2, CELL_DIMENSION / 2);
 }
 
 function parseCellID(id) {
