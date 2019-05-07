@@ -108,7 +108,7 @@ function cellUniverse() {
     }*/
    
 
-    this.generateGrid(){
+    this.generateGrid = function (){
         var bw = document.getElementById('main').offsetWidth;
         var bh = document.getElementById('main').offsetHeight;
         //padding around grid
