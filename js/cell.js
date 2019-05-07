@@ -121,16 +121,19 @@ function cellUniverse() {
         canvasGrid.setAttribute("width", cw);
         canvasGrid.setAttribute("height", ch);
 
+        var evenWidth = bw - (bw % CELL_DIMENSION)
+        var evenHeight = bh - (bh % CELL_DIMENSION)
+
         var context = canvasGrid.getContext("2d");
-        for (var x = 0; x <= bw; x += CELL_DIMENSION) {
+        for (var x = 0; x <= evenWidth; x += CELL_DIMENSION) {
             context.moveTo(0.5 + x + p, p);
-            context.lineTo(0.5 + x + p, bh);
+            context.lineTo(0.5 + x + p, evenHeight);
         }
 
 
-        for (var x = 0; x <= bh; x += CELL_DIMENSION) {
+        for (var x = 0; x <= evenHeight; x += CELL_DIMENSION) {
             context.moveTo(p, 0.5 + x + p);
-            context.lineTo(bw, 0.5 + x + p);
+            context.lineTo((evenWidth , 0.5 + x + p);
             }
 
         context.strokeStyle = "black";
