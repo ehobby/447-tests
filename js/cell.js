@@ -158,7 +158,6 @@ function cellUniverse() {
         CELL_DIMENSION = newDim;
         this.updateBounds();
         this.generateGrid();
-        generateGrid();
         this.generateCells();
         generateSelectedCells();
     }
