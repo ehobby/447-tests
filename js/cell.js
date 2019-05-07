@@ -145,9 +145,9 @@ function cellUniverse() {
     }
 
     this.updateBounds = function () {
-        var tableGrid = document.getElementById(CELL_GRID_ID);
-        var gridHeight = tableGrid.offsetHeight;
-        var gridWidth = tableGrid.offsetWidth;
+        var canvasGrid = document.getElementById(CELL_GRID_ID);
+        var gridHeight = canvasGrid.offsetHeight;
+        var gridWidth = canvasGrid.offsetWidth;
 
         var numRows = gridHeight / CELL_DIMENSION;
         var numCols = gridWidth / CELL_DIMENSION;
@@ -418,8 +418,8 @@ function generateSelectedCells() {
 }
 
 function updateCellAppearance(y, x, status) {
-    var tableGrid = document.getElementById(CELL_GRID_ID);
-    tableGrid.rows[y].cells[x].style.backgroundColor = COLORS[status];
+    var canvasGrid = document.getElementById(CELL_GRID_ID);
+    canvasGrid.rows[y].cells[x].style.backgroundColor = COLORS[status];
 }
 
 function parseCellID(id) {
