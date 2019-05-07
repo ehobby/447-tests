@@ -107,25 +107,37 @@ function cellUniverse() {
        
     }*/
    
-    this.generateGrid = function () {
-        var canvasGrid = document.getElementById(CELL_GRID_ID); //GENERATE TABLE SHOULD DECIDE ROWS/COLS
-        var context = canvasGrid.getContext("2d");
-        var height = canvasGrid.offsetHeight;
-        var width = canvasGrid.offsetWidth;
-        console.log(height);
-        console.log(width);
-        for (var x = 0; x <= width; x += CELL_DIMENSION) {
-            context.moveTo((x + PADDING), PADDING);
-            context.lineTo(x, height);
+    //grid width and height
+    var bw = canvasGrid.offsetWidth;
+    var bh = canvasGrid.offsetHeight;
+    //padding around grid
+    var p = 10;
+    //size of canvas
+    var cw = bw + (p*2) + 1;
+    var ch = bh + (p*2) + 1;
+
+    var canvasGrid = $('<canvas/>').attr({width: cw, height: ch}).appendTo('main');
+
+    var context = canvasGrid.get(0).getContext("2d");
+
+    function drawBoard(){
+        for (var x = 0; x <= bw; x += 40) {
+            context.moveTo(0.5 + x + p, p);
+            context.lineTo(0.5 + x + p, bh + p);
         }
 
-        for (var x = 0; x <= height; x += CELL_DIMENSION) {
-            context.moveTo(PADDING, (x + PADDING));
-            context.lineTo(width, x);
-        }
+
+        for (var x = 0; x <= bh; x += 40) {
+            context.moveTo(p, 0.5 + x + p);
+            context.lineTo(bw + p, 0.5 + x + p);
+            }
+
         context.strokeStyle = "black";
         context.stroke();
     }
+
+    drawBoard();
+
 
 
 
