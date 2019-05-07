@@ -109,18 +109,17 @@ function cellUniverse() {
    
     this.generateGrid = function () {
         var canvasGrid = document.getElementById(CELL_GRID_ID); //GENERATE TABLE SHOULD DECIDE ROWS/COLS
-        canvasGrid.innerHTML = "";
         var context = canvasGrid.getContext("2d");
-        var numRows = this.bottomBound;
-        var numCols = this.rightBound;
-        for (var x = 0; x <= numCols; x += CELL_DIMENSION) {
+        var height = canvasGrid.offsetHeight;
+        var width = canvasGrid.offsetWidth;
+        for (var x = 0; x <= width; x += CELL_DIMENSION) {
             context.moveTo(0.5 + x + PADDING, PADDING);
-            context.lineTo(0.5 + x + PADDING, numRows + PADDING);
+            context.lineTo(0.5 + x + PADDING, height + PADDING);
         }
 
-        for (var x = 0; x <= numRows; x += CELL_DIMENSION) {
+        for (var x = 0; x <= height; x += CELL_DIMENSION) {
             context.moveTo(PADDING, 0.5 + x + PADDING);
-            context.lineTo(numCols + PADDING, 0.5 + x + PADDING);
+            context.lineTo(width + PADDING, 0.5 + x + PADDING);
         }
         context.strokeStyle = "black";
         context.stroke();
