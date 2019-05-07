@@ -129,14 +129,14 @@ function cellUniverse() {
 
         var context = canvasGrid.getContext("2d");
         for (var x = 0; x <= evenWidth; x += CELL_DIMENSION) {
-            context.moveTo(0.5 + x + WIDTH_PAD, WIDTH_PAD);
-            context.lineTo(0.5 + x + WIDTH_PAD, evenHeight + WIDTH_PAD);
+            context.moveTo(0.5 + x + WIDTH_PAD, HEIGHT_PAD);
+            context.lineTo(0.5 + x + WIDTH_PAD, evenHeight + HEIGHT_PAD);
         }
 
 
         for (var x = 0; x <= evenHeight; x += CELL_DIMENSION) {
-            context.moveTo(HEIGHT_PAD, 0.5 + x + HEIGHT_PAD);
-            context.lineTo(evenWidth + HEIGHT_PAD, 0.5 + x + HEIGHT_PAD);
+            context.moveTo(WIDTH_PAD, 0.5 + x + HEIGHT_PAD);
+            context.lineTo(evenWidth + WIDTH_PAD, 0.5 + x + HEIGHT_PAD);
             }
 
         context.strokeStyle = "black";
