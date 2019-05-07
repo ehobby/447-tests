@@ -116,12 +116,12 @@ function cellUniverse() {
         console.log(width);
         for (var x = 0; x <= width / 4; x += CELL_DIMENSION) {
             context.moveTo(0.5 + x + PADDING, PADDING);
-            context.lineTo(0.5 + x + PADDING, height + PADDING);
+            context.lineTo(0.5 + x + PADDING, height - PADDING);
         }
 
         for (var x = 0; x <= height / 4; x += CELL_DIMENSION) {
             context.moveTo(PADDING, 0.5 + x + PADDING);
-            context.lineTo(width + PADDING, 0.5 + x + PADDING);
+            context.lineTo(width - PADDING, 0.5 + x + PADDING);
         }
         context.strokeStyle = "black";
         context.stroke();
