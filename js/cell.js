@@ -2,7 +2,7 @@ const MIN_DIM = 10;
 const MAX_DIM = 100;
 const CELL_GRID_ID = "cell-grid"
 const RESIZE_TIME_DELAY = 50; //IN MILLISECONDS
-var CELL_DIMENSION = 10; //20 X 20 PIXEL SQUARE
+var CELL_DIMENSION = 40; //20 X 20 PIXEL SQUARE
 var PADDING = 10;
 
 var ROUND_NUM = 0;
@@ -108,7 +108,7 @@ function cellUniverse() {
     }*/
    
 
-    function drawBoard(){
+    function generateGrid(){
         var bw = document.getElementById('main').offsetWidth;
         var bh = document.getElementById('main').offsetHeight;
         //padding around grid
@@ -122,22 +122,22 @@ function cellUniverse() {
         canvasGrid.setAttribute("height", ch);
 
         var context = canvasGrid.getContext("2d");
-        for (var x = 0; x <= bw; x += 40) {
+        for (var x = 0; x <= bw; x += CELL_DIMENSION) {
             context.moveTo(0.5 + x + p, p);
-            context.lineTo(0.5 + x + p, bh + p);
+            context.lineTo(0.5 + x + p, bh - p);
         }
 
 
-        for (var x = 0; x <= bh; x += 40) {
+        for (var x = 0; x <= bh; x += CELL_DIMENSION) {
             context.moveTo(p, 0.5 + x + p);
-            context.lineTo(bw + p, 0.5 + x + p);
+            context.lineTo(bw - p, 0.5 + x + p);
             }
 
         context.strokeStyle = "black";
         context.stroke();
     }
 
-    drawBoard();
+    generateGrid();
 
 
 
