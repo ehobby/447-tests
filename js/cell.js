@@ -22,6 +22,27 @@ var numFixedAlive = 0;
 var numFixedDead = 0;
 
 
+//Emily's color updating function
+function update(picker){
+    var newColor = picker.toRGBString();
+    switch(picker.getAttribute('id')){
+        case 'aliveColor':
+            COLORS[1] = newColor;
+            break;
+        case 'deadColor':
+            COLORS[0] = newColor;
+            break;
+        case 'fAliveColor':
+            COLORS[3] = newColor;
+            break;
+        case 'fDeadColor':
+            COLORS[2] = newColor;
+            break;
+    }
+
+}
+
+
 function cellUniverse() {
     this.leftBound = 0;
     this.topBound = 0;
