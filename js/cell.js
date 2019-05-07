@@ -107,20 +107,19 @@ function cellUniverse() {
        
     }*/
    
-    //grid width and height
-    var bw = canvasGrid.offsetWidth;
-    var bh = canvasGrid.offsetHeight;
-    //padding around grid
-    var p = 10;
-    //size of canvas
-    var cw = bw + (p*2) + 1;
-    var ch = bh + (p*2) + 1;
-
-    var canvasGrid = $('<canvas/>').attr({width: cw, height: ch}).appendTo('main');
-
-    var context = canvasGrid.get(0).getContext("2d");
 
     function drawBoard(){
+        var bw = getElementById("main").offsetWidth;
+        var bh = getElementById("main").offsetHeight;
+        //padding around grid
+        var p = 10;
+        //size of canvas
+        var cw = bw + (p*2) + 1;
+        var ch = bh + (p*2) + 1;
+
+        var canvasGrid = $('<canvas/>').attr({width: cw, height: ch}).appendTo('main');
+
+        var context = canvasGrid.get(0).getContext("2d");
         for (var x = 0; x <= bw; x += 40) {
             context.moveTo(0.5 + x + p, p);
             context.lineTo(0.5 + x + p, bh + p);
