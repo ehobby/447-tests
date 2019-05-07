@@ -110,16 +110,16 @@ function cellUniverse() {
     this.generateGrid = function () {
         var canvasGrid = document.getElementById(CELL_GRID_ID); //GENERATE TABLE SHOULD DECIDE ROWS/COLS
         var context = canvasGrid.getContext("2d");
-        var height = canvasGrid.offsetHeight / 2;
-        var width = canvasGrid.offsetWidth / 2;
+        var height = canvasGrid.offsetHeight;
+        var width = canvasGrid.offsetWidth;
         console.log(height);
         console.log(width);
-        for (var x = 0; x <= width; x += CELL_DIMENSION) {
+        for (var x = 0; x <= width / CELL_DIMENSION; x += CELL_DIMENSION) {
             context.moveTo(0.5 + x + PADDING, PADDING);
             context.lineTo(0.5 + x + PADDING, height + PADDING);
         }
 
-        for (var x = 0; x <= height; x += CELL_DIMENSION) {
+        for (var x = 0; x <= height / CELL_DIMENSION; x += CELL_DIMENSION) {
             context.moveTo(PADDING, 0.5 + x + PADDING);
             context.lineTo(width + PADDING, 0.5 + x + PADDING);
         }
