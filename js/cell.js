@@ -24,8 +24,8 @@ var numFixedDead = 0;
 
 //Emily's color updating function
 function update(picker){
-    var newColor = picker.toRGBString();
-    switch(picker.getAttribute('id')){
+    var newColor = this.toRGBString();
+    switch(this.getAttribute('id')){
         case 'aliveColor':
             COLORS[1] = newColor;
             break;
