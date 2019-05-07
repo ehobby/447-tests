@@ -3,6 +3,7 @@ const MAX_DIM = 100;
 const CELL_GRID_ID = "cell-grid"
 const RESIZE_TIME_DELAY = 50; //IN MILLISECONDS
 var CELL_DIMENSION = 40; //20 X 20 PIXEL SQUARE
+var PADDING = 10;
 
 var ROUND_NUM = 0;
 var selectedCells = [];
@@ -112,14 +113,14 @@ function cellUniverse() {
         var context = canvasGrid.getContext("2d");
         var numRows = this.bottomBound;
         var numCols = this.rightBound;
-        for (var x = 0; x <= bw; x += 40) {
+        for (var x = 0; x <= numCols; x += CELL_DIMENSION) {
             context.moveTo(0.5 + x + p, p);
-            context.lineTo(0.5 + x + p, bh + p);
+            context.lineTo(0.5 + x + p, numRows + p);
         }
 
-        for (var x = 0; x <= bh; x += 40) {
-            context.moveTo(p, 0.5 + x + p);
-            context.lineTo(bw + p, 0.5 + x + p);
+        for (var x = 0; x <= numRows; x += CELL_DIMENSION) {
+            context.moveTo(PADDING, 0.5 + x + PADDING);
+            context.lineTo(numCols + PADDING, 0.5 + x + PADDING);
         }
         context.strokeStyle = "black";
         context.stroke();
