@@ -133,7 +133,7 @@ function cellUniverse() {
 
         for (var x = 0; x <= evenHeight; x += CELL_DIMENSION) {
             context.moveTo(p, 0.5 + x + p);
-            context.lineTo((evenWidth , 0.5 + x + p);
+            context.lineTo(evenWidth , 0.5 + x + p);
             }
 
         context.strokeStyle = "black";
