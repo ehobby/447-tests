@@ -109,8 +109,8 @@ function cellUniverse() {
    
 
     function drawBoard(){
-        var bw = getElementById("main").offsetWidth;
-        var bh = getElementById("main").offsetHeight;
+        var bw = document.getElementById("main").offsetWidth;
+        var bh = document.getElementById("main").offsetHeight;
         //padding around grid
         var p = 10;
         //size of canvas
