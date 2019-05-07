@@ -117,8 +117,9 @@ function cellUniverse() {
         var cw = bw + (p*2) + 1;
         var ch = bh + (p*2) + 1;
 
-        document.getElementById(CELL_GRID_ID).setAttribute("width", cw);
-        document.getElementById(CELL_GRID_ID).setAttribute("height", ch);
+        var canvasGrid = document.getElementById(CELL_GRID_ID);
+        canvasGrid.setAttribute("width", cw);
+        canvasGrid.setAttribute("height", ch);
 
         var context = canvasGrid.getContext("2d");
         for (var x = 0; x <= bw; x += 40) {
