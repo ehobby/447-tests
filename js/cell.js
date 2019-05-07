@@ -110,8 +110,10 @@ function cellUniverse() {
     this.generateGrid = function () {
         var canvasGrid = document.getElementById(CELL_GRID_ID); //GENERATE TABLE SHOULD DECIDE ROWS/COLS
         var context = canvasGrid.getContext("2d");
-        var height = canvasGrid.offsetHeight / CELL_DIMENSION;
-        var width = canvasGrid.offsetWidth / CELL_DIMENSION;
+        var height = canvasGrid.offsetHeight / 2;
+        var width = canvasGrid.offsetWidth / 2;
+        console.log(height);
+        console.log(width);
         for (var x = 0; x <= width; x += CELL_DIMENSION) {
             context.moveTo(0.5 + x + PADDING, PADDING);
             context.lineTo(0.5 + x + PADDING, height + PADDING);
